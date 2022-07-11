@@ -28,12 +28,21 @@ void printhis() {
   }
 }
 
+void addhis(String s) {
+  if (history.length < 20) {
+    history.add(s);
+  } else {
+    history.removeAt(0);
+    history.add(s);
+  }
+}
+
 void main() {
   num x, m, x1 = 0, x2 = 0;
   String his;
   Calculator c = new Calculator();
   print(
-      'Calculator \n 1. Addition \n 2. Division \n 3. Subtraction \n 4. Multiplication \n 5. History \n 0. Exit. ');
+      'Calculator \n 1. Addition \n 2. Division \n 3. Subtraction \n 4. Multiplication \n 5. History (Last 20) \n 0. Exit. ');
 
   do {
     print('Enter your choice (0,1,2,3,4,5) respectively : ');
@@ -56,7 +65,7 @@ void main() {
         m = c.addition(x1, x2);
         print("Sum of $x1 and $x2 is : $m \n");
         his = '$x1 + $x2 = $m';
-        history.add(his);
+        addhis(his);
         break;
       case 2:
         if (x2 == 0) {
@@ -65,7 +74,7 @@ void main() {
           m = c.division(x1, x2);
           print('Division of $x1 and $x2 is : $m \n');
           his = '$x1 / $x2 = $m';
-          history.add(his);
+         addhis(his);
         }
 
         break;
@@ -73,13 +82,13 @@ void main() {
         m = c.subtraction(x1, x2);
         print('Substraction of $x1 and $x2 is : $m \n ');
         his = '$x1 - $x2 = $m';
-        history.add(his);
+        addhis(his);
         break;
       case 4:
         m = c.multiplication(x1, x2);
         print('Multiplication of $x1 and $x2 is : $m \n');
         his = '$x1 X $x2 = $m';
-        history.add(his);
+        addhis(his);
         break;
       case 5:
         print('\n End of History \n');
