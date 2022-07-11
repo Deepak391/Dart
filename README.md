@@ -5,6 +5,7 @@
  * 4. Multiplication
  * 5. History
  * 0. Exit
+ 
  These are the option avilable in calculator. 
  
  ### Preview
