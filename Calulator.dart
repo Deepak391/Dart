@@ -36,7 +36,7 @@ void main() {
       'Calculator \n 1. Addition \n 2. Division \n 3. Subtraction \n 4. Multiplication \n 5. History \n 0. Exit. ');
 
   do {
-    print('Enter your choice (1,2,3,4,5) respectively : ');
+    print('Enter your choice (0,1,2,3,4,5) respectively : ');
     x = num.parse(stdin.readLineSync()!);
     if (x == 5) {
       printhis();
